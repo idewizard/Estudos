@@ -10,34 +10,34 @@ import javax.persistence.Table;
 @Table(name = "empregado")
 public class Empregado {
 
-	@Id
-	@GeneratedValue(generator = "increment")
-	private int matricula;
-	
-	@Column(name="nome")
-	private String nome;
-	
-	public int getMatricula() {
-		return matricula;
-	}
-	
-	public void setMatricula(int matricula) {
-		this.matricula = matricula;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @Id
+    @GeneratedValue(generator = "increment")
+    private int matricula;
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-	
-	
+    @Column(name = "nome")
+    private String nome;
+
+    public Empregado(){
+    }
+
+    public Empregado(String nome){
+        this.nome = nome;
+    }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
 }

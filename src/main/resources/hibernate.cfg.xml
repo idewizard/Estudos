@@ -9,6 +9,6 @@
   <property name="hibernate.jdbc.time_zone">UTC</property>
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-  <mapping class="br.com.estudo.Empregado" resource="Empregado.hbm.xml"/>
+  <mapping class="br.com.estudo.Empregado" resource="empregado.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

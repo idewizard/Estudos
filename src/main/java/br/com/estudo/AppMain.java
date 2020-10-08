@@ -11,10 +11,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class AppMain {
 
+	public static final String HIBERNATE_CFG_XML = "hibernate.cfg.xml";
+
 	public static void main(String[] args) {
 		
 		StandardServiceRegistry ssr= new StandardServiceRegistryBuilder()
-				.configure("hibernate.cfg.xml")
+				.configure(HIBERNATE_CFG_XML)
 				.build();
 		
 		Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -22,13 +24,8 @@ public class AppMain {
 		SessionFactory factory =  meta.getSessionFactoryBuilder().build();
 		Session session = factory.openSession();
 		Transaction t =  session.beginTransaction();
-		
-		Empregado emp = new Empregado();
-		
-		
-		emp.setNome("José");
-		
-		session.save(emp);
+
+		session.save(new Empregado("JosÃ©"));
 		
 		t.commit();
 		System.out.println("foi");
